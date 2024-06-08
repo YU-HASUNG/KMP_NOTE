@@ -36,9 +36,13 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            implementation(libs.coroutines.android) //coroutines
         }
         commonMain.dependencies {
-            implementation(libs.voyager)
+            implementation(libs.voyager) //voyager
+            implementation(libs.coroutines.core) //coroutines
+
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
@@ -47,6 +51,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
         }
         desktopMain.dependencies {
+            implementation(libs.coroutines.swing) //coroutines
+
             implementation(compose.desktop.currentOs)
         }
     }
